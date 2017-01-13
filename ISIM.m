@@ -2314,6 +2314,19 @@ close(Prog_wndw)
         
     end
 
+    function [out] = normalize(in)
+    % normalization after Schmnidt et al. 2008
+    % takes column vectors
+
+    in_mean = nanmean(in); 
+    in_std = nanstd(in);
+    out = in;
+    out = out - repmat(in_mean, size(in,1),1); 
+    out = out ./ repmat(in_std, size(in,1),1);
+
+
+    end
+
 
 end
 
