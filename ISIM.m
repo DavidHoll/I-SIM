@@ -554,6 +554,8 @@ for k = 1:length(inHeader.both)
 end
 
 %% garson RI | UNL
+
+
 % ||||||||||||||||| Progress Window |||||||||||||||||||||||||||||||||||||||
 BusyText = 'Sensitivity test (Garson 1991) 1/3';
 jObj.setBusyText(BusyText)
@@ -574,6 +576,8 @@ for k = 1:size(data.MLP.unl.net,1)
     % ||||||||||||||||| Progress Window |||||||||||||||||||||||||||||||||||||||
 end
 
+% plotGarsonhist will error if one input ocntains only zeros -> include
+% input validation
 Garson = plotGarsonhist_v2(IW, LW, inHeader.unl, iterations);
 
 for m = 1:size(inHeader.unl,1)
